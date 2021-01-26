@@ -68,10 +68,7 @@ function draw(){
     text("Refresh the page to Restart", 550,205)
     }
 
-    if(score==1280){
-        World.remove(world,ground2);
-    }
-
+    
     textSize(35)
     fill("white")
     stroke("black");
