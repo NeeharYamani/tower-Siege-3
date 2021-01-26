@@ -14,5 +14,7 @@ class Ground {
       fill("red");
       stroke("maroon")
       rect(pos.x, pos.y, this.width, this.height);
+      
     }
+    
   };

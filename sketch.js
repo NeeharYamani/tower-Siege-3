@@ -7,8 +7,10 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var box1;
 var score=0;
+
 function preload() {
     getBackground();
+   
 }
 
 function setup(){
@@ -22,7 +24,7 @@ function setup(){
     ground2 = new Ground(1200,280,400,20)
 	
 
-    box1 = new Box(450,95,70,70);
+    
     box2 = new Box(524,285,70,70);
     box3 = new Box(598,390,70,70);
     box4 = new Box(672,450,70,70);
@@ -44,8 +46,7 @@ function setup(){
     box18 = new Box(1200,200,70,70);
 
     hero = new Hero(220,400,30);
-    
-  
+
    slingshot = new Slingshot(hero.body, {x:200,y:180})
 
 }
@@ -54,13 +55,30 @@ function draw(){
     background("maroon");
     Engine.update(engine);
 
+    if(score==1280){
+        textSize(150)
+        fill("white")
+        stroke("black")
+        text("GAME OVER",300,405)
+    }
+    if(score==1280){
+    textSize(45)
+    fill("white")
+    stroke("black")
+    text("Refresh the page to Restart", 550,205)
+    }
+
+    if(score==1280){
+        World.remove(world,ground2);
+    }
+
     textSize(35)
     fill("white")
     stroke("black");
     strokeWeight(10)
     text("Score:"+score, width-900,100);
    
-    box1.display();
+    
     box2.display();
     ground.display();
     ground2.display();
@@ -85,9 +103,11 @@ function draw(){
     box18.display();
     hero.display();
 
+    
+
     slingshot.display();
 
-    box1.score();
+   
     box2.score();
     box3.score();
     box4.score();
@@ -112,6 +132,12 @@ function draw(){
     fill("white");
     text("Drag the Stone and Release it, to launch it towards the blocks",300,35);
         textSize(25);
+
+        stroke("Blue");
+    strokeWeight(7);
+    fill("white");
+    text("Press SPACE for a second chance ",600,605);
+        textSize(45);
        
 	
 }
